@@ -1,0 +1,260 @@
+/*
+Paars #5722CD;
+Blauw #4845E4;
+Roze #ED4385;
+Zwart #0C0C0C (voor standaard tekst);
+Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services") Uitzonderingen:
+Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)
+Grijs #7A7A7A (voor de service-tegel tekst);
+ */
+
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --purple: #5722CD;
+    --blue: #4845E4;
+    --button-background-color: #ED4385;
+    --default-text-color: #0C0C0C;
+    --floating-text-color: #F2F0FF;
+    --projects-background-color: #F3F6F9;
+    --service-text-color: #7A7A7A;
+}
+
+
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, p {
+    font-family: 'Merriweather', serif;
+    margin-bottom: 0.83em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+p {
+    font-size: 1em;
+}
+
+
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+.outer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inner-container {
+    flex-basis: 1200px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 0 5px;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+article {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.content-project {
+    flex-basis: 350px;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 5px;
+    margin: 10px 75px 10px 15px;
+}
+
+img {
+    width: 100%;
+}
+
+.image-wrapper {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+a, a:visited, a:hover {
+    color: white;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+.navigationbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 300px;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+
+header {
+    background: rgb(72,69,228);
+    background: linear-gradient(90deg, rgba(72,69,228,1) 55%, rgba(87,34,205,0.958420868347339) 85%);
+    color: white;
+}
+
+.menu-items {
+    color: white;
+    font-size: 1em;
+}
+
+button {
+    background-color: var(--button-background-color);
+    margin: 16px;
+    padding: 16px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    box-shadow: 0 5px 5px #5722CD;
+}
+
+.icon {
+    width: 3em;
+    margin-top: 4em;
+}
+
+
+/* --------------- 4.2 Introduction ------------------- */
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--purple);
+}
+
+
+/* --------------- 4.3 Projects ------------------- */
+
+.projects {
+    background-color: var(--projects-background-color);
+    flex-basis: 1200px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 0 5px;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rollingstone {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.variety {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.worth {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.article-link, .article-link:visited, .article-link:hover {
+    color: var(--purple);
+    font-size: 0.8em;
+    text-transform: uppercase;
+    text-decoration-line: none;
+}
+
+/* --------------- 4.4 Services ------------------- */
+
+.services {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-block {
+    flex-basis: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 0 20px 10px 10px;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-block-text {
+    color: var(--service-text-color);
+    font-size: 0.8em;
+}
+
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
